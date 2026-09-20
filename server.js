@@ -6,10 +6,19 @@ const path=require('path');
 const crypto=require('crypto');
 
 const app=express();
-const PORT=process.env.PORT||3000;
-const db=new Database(path.join(__dirname,'store.db'));
-db.pragma('journal_mode = WAL');
-db.pragma('foreign_keys = ON');
+const PORT=Number(process.env.PORT||3000);
+const HOST=process.env.HOST||'0.0.0.0';
+const DB_DIR=process.env.DB_DIR||__dirname;
+const DB_PATH=path.join(DB_DIR,'store.db');
+let db=null;
+let startupError=null;
+try {
+  db=new Database(DB_PATH);
+  db.pragma('foreign_keys = ON');
+} catch (err) {
+  startupError=err;
+  console.error('DATABASE_OPEN_ERROR',err);
+}
 app.use(express.json({limit:'8mb'}));
 app.use(express.urlencoded({extended:true,limit:'8mb'}));
 app.set('trust proxy',1);
@@ -28,7 +37,9 @@ function init(){
  const count=db.prepare('SELECT COUNT(*) c FROM products').get().c;
  if(!count){const ins=db.prepare('INSERT INTO products(name,description,price_points,stock,category,image) VALUES(?,?,?,?,?,?)'); const seed=[['سيروم فيتامين C','سيروم للعناية بالبشرة ومنحها إشراقة.',2500,12,'عناية بالبشرة',''],['واقي شمس','واقي شمس للاستخدام اليومي.',3500,8,'عناية بالبشرة',''],['مرطب للبشرة','مرطب خفيف للاستخدام اليومي.',1800,20,'مرطبات',''],['غسول للوجه','غسول لطيف للتنظيف اليومي.',2200,0,'تنظيف',''],['تونر مرطب','تونر خفيف للعناية اليومية.',1600,15,'تونر',''],['سيروم نياسيناميد','سيروم مناسب للعناية بالبشرة.',2800,10,'سيرومات',''],['كريم مرطب','كريم مرطب للاستخدام اليومي.',3000,7,'مرطبات',''],['ماسك للوجه','ماسك عناية للبشرة.',1900,9,'ماسكات','']]; seed.forEach(x=>ins.run(...x));}
 }
-init();
+if (db) {
+  try { init(); } catch (err) { startupError=err; console.error('DATABASE_INIT_ERROR',err); }
+}
 
 function publicUser(u){return {type:'user',id:u.id,username:u.username,name:u.name,customer_code:u.customer_code,points:u.points,avatar:u.avatar||'',role:u.role};}
 function requireUser(req,res,next){const id=req.session.userId;if(!id)return res.status(401).json({error:'يجب تسجيل الدخول'});const u=db.prepare('SELECT * FROM users WHERE id=?').get(id);if(!u)return res.status(401).json({error:'انتهت الجلسة'});req.user=u;next();}
@@ -116,9 +127,14 @@ app.delete('/api/admin/coupons/:id',requireAdmin,(req,res)=>{const r=db.prepare(
 
 app.get('/api/admin/stats',requireAdmin,(req,res)=>{res.json({customers:db.prepare('SELECT COUNT(*) c FROM users WHERE role="customer"').get().c,products:db.prepare('SELECT COUNT(*) c FROM products WHERE active=1').get().c,orders:db.prepare('SELECT COUNT(*) c FROM orders').get().c,points:db.prepare('SELECT COALESCE(SUM(points),0) s FROM users WHERE role="customer"').get().s});});
 
-app.get('/api/health',(req,res)=>res.json({ok:true,service:'points-store-v28',database:'sqlite'}));
+app.get('/api/health',(req,res)=>{
+  if(startupError) return res.status(503).json({ok:false,service:'points-store-v28',database:'sqlite',error:String(startupError.message||startupError)});
+  res.json({ok:true,service:'points-store-v28',database:'sqlite'});
+});
 app.use(express.static(path.join(__dirname,'public')));
-app.get('*',(req,res)=>res.sendFile(path.join(__dirname,'public','index.html')));
-const HOST=process.env.HOST||'0.0.0.0';
-const server=app.listen(Number(PORT),HOST,()=>console.log(`Points Store V28 LIVE on ${HOST}:${PORT}`));
+app.use((req,res)=>{
+  if(req.method==='GET') return res.sendFile(path.join(__dirname,'public','index.html'));
+  res.status(404).json({error:'Not found'});
+});
+const server=app.listen(PORT,HOST,()=>console.log(`Points Store V28 running on http://${HOST}:${PORT}`));
 server.on('error',(err)=>{console.error('SERVER_START_ERROR',err);process.exit(1);});
