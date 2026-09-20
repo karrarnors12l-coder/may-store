@@ -1,0 +1,1171 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>متجر النقاط</title>
+<style>
+*{box-sizing:border-box;font-family:Tahoma,Arial,sans-serif}body{margin:0;background:#f4f7fb;color:#17202a}button,input{font:inherit}button{cursor:pointer;border:0}.wrap{max-width:1180px;margin:auto;padding:18px}.top{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid #e7edf5;box-shadow:0 2px 14px #0000000b}.topin{max-width:1180px;margin:auto;padding:13px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{font-size:20px;font-weight:800;color:#0b4fa3}.actions{display:flex;align-items:center;gap:7px;flex-wrap:wrap}.pill{padding:9px 12px;border-radius:12px;background:#eef5ff;color:#0b4fa3;font-weight:700;font-size:13px}.btn{background:#0b4fa3;color:#fff;padding:10px 14px;border-radius:10px;font-weight:700}.btn.secondary{background:#edf2f7;color:#263238}.btn.danger{background:#c62828}.hero{margin-top:18px;background:linear-gradient(135deg,#0b4fa3,#08336e);color:#fff;border-radius:20px;padding:30px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px}.hero h1{margin:0 0 8px;font-size:29px}.hero p{margin:0;color:#dcecff;line-height:1.8}.heroBadge{background:#ffffff18;border:1px solid #ffffff2c;border-radius:16px;padding:16px 18px;min-width:190px}.heroBadge b{display:block;font-size:24px;margin-top:5px}.tools{margin-top:18px;background:#fff;border:1px solid #e7edf5;border-radius:16px;padding:12px;display:flex;gap:9px;flex-wrap:wrap}.search{flex:1;min-width:220px;border:1px solid #dce4ee;border-radius:10px;padding:11px 13px;outline:none}.select{border:1px solid #dce4ee;border-radius:10px;padding:11px 13px;background:#fff}.titleRow{display:flex;align-items:center;justify-content:space-between;margin:24px 0 12px}.titleRow h2{margin:0}.muted{color:#748094;font-size:13px}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:15px}.card{background:#fff;border:1px solid #e7edf5;border-radius:16px;overflow:hidden;box-shadow:0 4px 15px #00000008}.pic{height:180px;background:#eef3f8;display:flex;align-items:center;justify-content:center;overflow:hidden}.pic img{width:100%;height:100%;object-fit:cover}.placeholder{font-size:54px}.info{padding:14px}.name{font-weight:800;font-size:16px;margin-bottom:7px}.desc{color:#6b7685;font-size:13px;line-height:1.7;min-height:42px}.price{color:#0b4fa3;font-weight:800;margin:10px 0}.stock{font-size:12px;color:#64748b;margin-bottom:10px}.buy{width:100%}.empty{background:#fff;border:1px dashed #ccd6e3;border-radius:15px;padding:28px;text-align:center;color:#778398}.modal{display:none;position:fixed;inset:0;background:#0008;z-index:50;align-items:center;justify-content:center;padding:16px}.box{width:100%;max-width:560px;max-height:90vh;overflow:auto;background:#fff;border-radius:18px;padding:20px}.box h2{margin-top:0}.input{width:100%;padding:12px;border:1px solid #dbe3ed;border-radius:10px;margin:6px 0;outline:none}.msg{font-size:13px;color:#c62828;min-height:18px}.row{display:flex;gap:8px;flex-wrap:wrap}.row>*{flex:1}.close{width:100%;margin-top:8px;background:#eef2f6;color:#263238;padding:11px;border-radius:10px}.accountGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.stat{background:#f6f9fd;border:1px solid #e5ebf3;border-radius:13px;padding:13px}.stat small{display:block;color:#758195}.stat b{display:block;margin-top:6px;font-size:19px;color:#0b4fa3}.order{border:1px solid #e2e8f0;border-radius:13px;padding:13px;margin:9px 0}.orderTop{display:flex;justify-content:space-between;gap:10px}.status{padding:5px 8px;border-radius:8px;background:#eef5ff;color:#0b4fa3;font-size:12px;font-weight:700}.orderItems{color:#657184;font-size:13px;line-height:1.8;margin-top:7px}.cartLine{display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px solid #edf1f5}.qty{display:flex;align-items:center;gap:5px}.qty button{width:28px;height:28px;border-radius:8px;background:#eef2f6}.total{display:flex;justify-content:space-between;font-weight:800;font-size:18px;padding-top:13px}.notice{padding:11px 13px;background:#fff8df;border:1px solid #f0df9c;color:#745b00;border-radius:11px;font-size:13px;margin-bottom:10px}.hidden{display:none!important}@media(max-width:650px){.hero{padding:22px 18px}.heroBadge{display:none}.hero h1{font-size:23px}.topin{align-items:flex-start}.brand{font-size:17px}.accountGrid{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.pic{height:135px}.info{padding:11px}.name{font-size:14px}.desc{font-size:12px}.btn{padding:9px 11px;font-size:12px}.actions{justify-content:flex-end}}
+.productTools{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.category{border:1px solid #dce4ee;border-radius:10px;padding:11px 13px;background:#fff}.detailsGrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.detailPic{height:260px;background:#eef3f8;border-radius:14px;display:flex;align-items:center;justify-content:center;overflow:hidden}.detailPic img{width:100%;height:100%;object-fit:contain}.detailPrice{font-size:22px;color:#0b4fa3;font-weight:900;margin:12px 0}.detailDesc{color:#657286;line-height:1.9}.tag{display:inline-block;background:#eef5ff;color:#0b4fa3;border-radius:999px;padding:6px 10px;font-size:12px;font-weight:700}@media(max-width:700px){.detailsGrid{grid-template-columns:1fr}.detailPic{height:220px}}
+
+.orderCard{border:1px solid #e4eaf2;border-radius:14px;padding:14px;margin:10px 0;background:#fff}
+.orderHead{display:flex;justify-content:space-between;gap:10px;align-items:center}
+.badge{display:inline-block;padding:5px 10px;border-radius:999px;background:#eef3f8;font-size:12px}
+.badge.ok{background:#e7f7ed;color:#177245}.badge.bad{background:#fdeaea;color:#a61b1b}.badge.warn{background:#fff4dc;color:#8a5a00}
+
+.pointsGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:12px 0}
+.pointCard{padding:14px;border:1px solid #e3eaf2;border-radius:14px;background:#f8fbff}
+.pointCard b{display:block;font-size:20px;margin-top:4px}
+.historyRow{display:flex;justify-content:space-between;gap:10px;padding:11px 0;border-bottom:1px solid #edf1f5}
+.plus{color:#16834b}.minus{color:#b52b2b}
+@media(max-width:650px){.pointsGrid{grid-template-columns:1fr}}
+
+.iconBtn{border:0;background:#fff;border:1px solid #e1e8f0;border-radius:12px;padding:8px 12px;cursor:pointer;position:relative}
+.notifyCount{display:inline-flex;min-width:19px;height:19px;align-items:center;justify-content:center;border-radius:50%;background:#e53935;color:#fff;font-size:11px;font-weight:700}
+.notifyCount:empty{display:none}
+.notificationItem{padding:13px;border:1px solid #e5ebf2;border-radius:13px;margin:8px 0;background:#fff;cursor:pointer}
+.notificationItem.unread{border-right:4px solid #1769aa;background:#f5faff}
+.notificationItem b{display:block;margin-bottom:4px}
+.notificationTime{font-size:12px;color:#778899}
+
+.couponCard{border:1px solid #e2e9f1;border-radius:14px;padding:13px;margin:8px 0;background:#fff}
+.couponCode{font-weight:800;letter-spacing:1px}
+.couponTag{display:inline-block;background:#eef7ff;color:#1769aa;border-radius:999px;padding:4px 9px;font-size:12px}
+.couponApplied{border:1px solid #bfe5cc;background:#effbf3;color:#176b3c;border-radius:12px;padding:10px;margin:8px 0}
+
+.profileHero{display:flex;align-items:center;gap:14px;padding:16px;border:1px solid #e1e8f0;border-radius:16px;background:linear-gradient(135deg,#f7fbff,#fff);margin-bottom:14px}
+.avatar{width:72px;height:72px;border-radius:50%;object-fit:cover;border:3px solid #fff;box-shadow:0 2px 10px rgba(0,0,0,.12);background:#e9eef5}
+.levelBadge{display:inline-flex;align-items:center;gap:5px;padding:5px 10px;border-radius:999px;background:#eaf4ff;color:#1769aa;font-weight:700}
+.levelBar{height:10px;border-radius:99px;background:#e8edf3;overflow:hidden;margin-top:8px}
+.levelFill{height:100%;background:#1769aa;border-radius:99px}
+.levelMeta{display:flex;justify-content:space-between;font-size:12px;color:#6b7785;margin-top:5px}
+
+.proProfileHero{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:18px;padding:20px;border-radius:22px;background:linear-gradient(135deg,#0b3b82,#1769aa);color:#fff;box-shadow:0 12px 30px rgba(11,59,130,.18);margin-bottom:14px}
+.proAvatarWrap{position:relative}.proAvatar{width:92px;height:92px;border-radius:50%;object-fit:cover;background:#fff;border:4px solid rgba(255,255,255,.85);display:block}.proAvatarLevel{position:absolute;right:-3px;bottom:-5px;width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#fff;font-size:20px;box-shadow:0 3px 12px rgba(0,0,0,.2)}
+.proEyebrow{font-size:12px;opacity:.75}.proIdentity h2{margin:3px 0;font-size:23px}.proCode{font-size:12px;opacity:.82}.proLevelPill{display:inline-flex;margin-top:9px;padding:6px 11px;border-radius:999px;background:rgba(255,255,255,.16);font-weight:700}
+.proPointsBox{min-width:150px;text-align:center;padding:14px;border-radius:16px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.18)}.proPointsBox span,.proPointsBox small{display:block;font-size:12px;opacity:.8}.proPointsBox strong{display:block;font-size:29px;margin:4px 0}
+.proStatsGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:12px 0}.proStat{padding:14px;border:1px solid #e5ebf2;border-radius:15px;background:#fff}.proStat span{display:block;color:#6c7886;font-size:12px}.proStat b{display:block;margin-top:5px;font-size:17px;color:#1e293b}
+.proProgressCard{padding:16px;border:1px solid #dfe7f0;border-radius:17px;background:#f8fbff}.proProgressTop{display:flex;justify-content:space-between;align-items:center}.proProgressTop b{display:block}.proProgressTop small{display:block;color:#738092;margin-top:3px}.proProgressBar{height:12px;background:#e4eaf2;border-radius:99px;overflow:hidden;margin-top:12px}.proProgressBar div{height:100%;background:linear-gradient(90deg,#1769aa,#5ee7ff);border-radius:99px}.proProgressBottom{display:flex;justify-content:space-between;font-size:12px;color:#738092;margin-top:6px}
+.proSectionTitle{font-size:16px;font-weight:800;margin:18px 0 10px}.levelsGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.levelCard{position:relative;padding:14px;text-align:center;border:1px solid #e2e8f0;border-radius:16px;background:#fff;overflow:hidden}.levelCard:before{content:'';position:absolute;inset:0 0 auto;height:4px;background:var(--level-color)}.levelCard.locked{opacity:.48;filter:grayscale(.45)}.levelCard.current{border:2px solid var(--level-color);box-shadow:0 5px 16px rgba(0,0,0,.07)}.levelBadgeBig{font-size:34px;margin:5px 0}.levelCardName{font-weight:800}.levelCardPoints{font-size:12px;color:#697586;margin-top:3px}.levelCardState{font-size:11px;margin-top:7px;color:var(--level-color);font-weight:700}.proTip{margin-top:13px;padding:12px 14px;border-radius:14px;background:#eef7ff;color:#31536f;font-size:13px}
+@media(max-width:800px){.proProfileHero{grid-template-columns:auto 1fr}.proPointsBox{grid-column:1/-1}.proStatsGrid{grid-template-columns:repeat(2,1fr)}.levelsGrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.proProfileHero{grid-template-columns:1fr;text-align:center}.proAvatarWrap{margin:auto}.proPointsBox{width:auto}.proStatsGrid{grid-template-columns:1fr 1fr}.levelsGrid{grid-template-columns:1fr 1fr}}
+
+.editProfileGrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.editProfileGrid>div:last-child{grid-column:1/-1}
+.avatarCamera{position:absolute;left:2px;bottom:2px;width:34px;height:34px;border-radius:50%;background:#1769aa;color:#fff;border:3px solid #fff;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 3px 10px rgba(0,0,0,.22);font-size:15px}
+.avatarUploadRow{display:flex;gap:8px;align-items:center;margin-top:12px}
+.avatarUploadButton{display:inline-flex;align-items:center;justify-content:center;padding:10px 14px;border-radius:11px;background:#1769aa;color:#fff;font-weight:700;cursor:pointer}
+@media(max-width:600px){.editProfileGrid{grid-template-columns:1fr}.editProfileGrid>div:last-child{grid-column:auto}.avatarUploadRow{flex-direction:column;align-items:stretch}}
+
+.profileEditTop{margin:10px 0 18px}
+.profileQuickActions{display:grid;grid-template-columns:1fr;gap:10px}
+.quickAction{min-height:58px;border:1px solid #dbe7f3;border-radius:14px;background:#fff;display:flex;align-items:center;justify-content:center;gap:9px;color:#124b84;cursor:pointer;box-shadow:0 4px 14px rgba(20,70,120,.07);font-size:14px}
+.quickAction span{width:34px;height:34px;border-radius:10px;background:#eaf4ff;display:flex;align-items:center;justify-content:center;font-size:17px}
+.quickAction:hover{border-color:#5ca8e8;transform:translateY(-1px)}
+.levelsGrid{margin-top:28px;padding-top:20px;border-top:2px solid #edf3f9}
+@media(max-width:600px){.profileQuickActions{grid-template-columns:1fr}.quickAction{min-height:52px}}
+
+.visibleLevelsSection{margin:14px 0;padding:14px;border:1px solid #e1e9f2;border-radius:16px;background:#f8fbff}
+.visibleLevelsTitle{font-size:17px;font-weight:800;color:#174f80;margin-bottom:11px}
+.visibleLevelsGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}
+.visibleLevel{padding:11px;border:1px solid #e2e9f1;border-radius:12px;background:#fff}
+.visibleLevel b{display:block;color:#244f70;font-size:13px}
+.visibleLevel span{display:block;color:#7b8da0;font-size:11px;margin-top:3px}
+.visibleLevel em{display:block;color:#15905b;font-style:normal;font-size:11px;font-weight:800;margin-top:5px}
+@media(max-width:600px){.visibleLevelsGrid{grid-template-columns:1fr}}
+
+/* V27 storefront slider + product cards */
+.storeSlider{position:relative;margin-top:18px;height:270px;border-radius:24px;overflow:hidden;background:linear-gradient(135deg,#0b4fa3,#062c61);box-shadow:0 14px 35px #0b4fa326;direction:ltr}
+.sliderTrack{height:100%;position:relative}
+.sliderItem{position:absolute;inset:0;display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:20px;padding:30px 68px 42px;opacity:0;transform:translateX(18px);transition:opacity .45s ease,transform .45s ease;pointer-events:none;direction:rtl}
+.sliderItem.active{opacity:1;transform:translateX(0);pointer-events:auto}
+.sliderContent{color:#fff;max-width:620px}.sliderKicker{display:inline-flex;padding:6px 11px;border-radius:999px;background:#ffffff1c;border:1px solid #ffffff2c;font-size:12px;font-weight:800;margin-bottom:10px}.sliderContent h2{font-size:30px;margin:0 0 8px}.sliderContent p{margin:0;color:#dbeafe;line-height:1.8;font-size:14px}.sliderPrice{margin-top:12px;font-size:18px;font-weight:900}.sliderBtn{display:inline-flex;margin-top:15px;padding:11px 18px;border:0;border-radius:11px;background:#fff;color:#0b4fa3;font-weight:900;cursor:pointer;box-shadow:0 7px 18px #0002}.sliderVisual{height:205px;border-radius:20px;overflow:hidden;background:#ffffff12;border:1px solid #ffffff25;display:flex;align-items:center;justify-content:center}.sliderVisual img{width:100%;height:100%;object-fit:cover}.sliderVisual .placeholder{font-size:70px}.sliderArrow{position:absolute;top:50%;transform:translateY(-50%);z-index:4;width:40px;height:40px;border:1px solid #ffffff35;border-radius:50%;background:#ffffff18;color:#fff;font-size:31px;line-height:1;cursor:pointer;backdrop-filter:blur(8px)}.sliderPrev{left:16px}.sliderNext{right:16px}.sliderDots{position:absolute;bottom:14px;left:0;right:0;display:flex;justify-content:center;gap:7px;z-index:5}.sliderDot{width:8px;height:8px;border:0;border-radius:50%;padding:0;background:#ffffff55;cursor:pointer;transition:.25s}.sliderDot.active{width:24px;border-radius:10px;background:#fff}
+.grid{grid-template-columns:repeat(auto-fill,minmax(235px,1fr));gap:18px}.card{position:relative;background:#fff;border:1px solid #e5ebf3;border-radius:20px;overflow:hidden;box-shadow:0 7px 24px #17365d0d;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}.card:hover{transform:translateY(-5px);box-shadow:0 15px 32px #17365d18;border-color:#cbdcf0}.pic{height:205px;background:linear-gradient(145deg,#f3f7fb,#e8f0f8);position:relative}.pic:after{content:'عرض المنتج';position:absolute;bottom:10px;right:10px;padding:5px 9px;border-radius:8px;background:#ffffffdd;color:#0b4fa3;font-size:10px;font-weight:800;opacity:0;transform:translateY(4px);transition:.25s}.card:hover .pic:after{opacity:1;transform:translateY(0)}.pic img{transition:transform .35s ease}.card:hover .pic img{transform:scale(1.045)}.info{padding:15px}.name{font-size:16px;line-height:1.5;min-height:24px}.desc{min-height:42px;display:-webkit-box;line-clamp:2;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}.price{display:inline-flex;align-items:center;gap:5px;background:#eef6ff;color:#0b4fa3;border-radius:10px;padding:7px 9px;margin:11px 0 8px;font-size:14px}.stock{margin-bottom:12px}.buy{border-radius:11px;font-weight:800;transition:.2s}.buy:hover:not(:disabled){transform:translateY(-1px)}
+@media(max-width:700px){.storeSlider{height:390px}.sliderItem{grid-template-columns:1fr;padding:24px 50px 40px;gap:14px}.sliderContent h2{font-size:24px}.sliderVisual{height:145px;order:-1}.sliderArrow{width:36px;height:36px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.pic{height:155px}.info{padding:11px}.name{font-size:14px}.desc{font-size:12px}.price{font-size:12px}.stock{font-size:11px}}
+@media(max-width:430px){.storeSlider{height:405px}.sliderItem{padding-left:45px;padding-right:45px}.grid{grid-template-columns:1fr}.pic{height:205px}}
+
+
+/* V27.1 — professional header + storefront sections */
+.top{background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-bottom:1px solid #e6edf6;box-shadow:0 6px 24px rgba(20,58,100,.07)}
+.topin{min-height:72px;padding:10px 18px}
+.brandBtn{border:0;background:transparent;display:flex;align-items:center;gap:10px;padding:4px;cursor:pointer;color:#0b3b82;text-align:right}
+.brandBtn>span:last-child{display:flex;flex-direction:column;gap:2px}.brandBtn b{font-size:17px}.brandBtn small{font-size:10px;color:#8090a5;font-weight:700}.brandMark{width:42px;height:42px;border-radius:13px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#0b4fa3,#1769aa);box-shadow:0 8px 18px #0b4fa32b;font-size:21px;color:#fff}
+.mainNav{display:flex;align-items:center;gap:4px;margin-right:auto;margin-left:18px}.navLink{border:0;background:transparent;color:#6b7890;padding:10px 12px;border-radius:10px;font-size:13px;font-weight:800}.navLink:hover,.navLink.active{background:#eef6ff;color:#0b4fa3}
+.demoPill{background:#eafaf0!important;color:#16734a!important;padding:8px 10px}.pointsChip{display:flex;align-items:center;gap:7px;background:#f4f8fd;border:1px solid #e2eaf3;border-radius:13px;padding:6px 9px}.pointsIcon{width:28px;height:28px;border-radius:9px;background:#fff1bd;display:flex;align-items:center;justify-content:center}.pointsChip span:nth-child(2){display:flex;flex-direction:column;line-height:1}.pointsChip small{font-size:9px;color:#7b8798}.pointsChip b{font-size:13px;color:#0b4fa3;margin-top:3px}.pointsChip em{font-style:normal;font-size:10px;color:#748094;font-weight:800}.iconBtn{position:relative;width:39px;height:39px;border-radius:11px;border:1px solid #e1e8f1;background:#fff;color:#435269;font-size:17px}.iconBtn:hover{background:#eef6ff;color:#0b4fa3}.dangerIcon:hover{background:#fff0f0;color:#c62828}.notifyCount{position:absolute;top:-5px;right:-5px;min-width:17px;height:17px;padding:0 4px;border-radius:99px;background:#d32f2f;color:#fff;font-size:9px;font-weight:900;display:flex;align-items:center;justify-content:center;border:2px solid #fff}.actionBtn{border:0;border-radius:11px;padding:10px 15px;font-weight:800}.loginAction{background:#0b4fa3;color:#fff}.cartAction{border:0;border-radius:12px;background:#0b4fa3;color:#fff;padding:10px 12px;display:flex;align-items:center;gap:7px;font-weight:800}.cartAction b{min-width:20px;height:20px;border-radius:99px;background:#fff;color:#0b4fa3;font-size:10px;display:flex;align-items:center;justify-content:center}
+.homeHero{position:relative;overflow:hidden;min-height:215px;padding:30px 32px;background:radial-gradient(circle at 15% 20%,#3b82c8 0,#1769aa 25%,#0b3b82 70%);box-shadow:0 15px 35px #0b4fa326}.homeHero:after{content:'';position:absolute;width:250px;height:250px;border-radius:50%;background:#ffffff0c;left:-70px;bottom:-150px}.heroCopy{position:relative;z-index:1}.heroKicker{display:inline-flex;padding:6px 10px;border-radius:99px;background:#ffffff18;border:1px solid #ffffff2d;font-size:11px;font-weight:800}.homeHero h1{font-size:30px;margin:10px 0 7px}.homeHero p{max-width:650px}.heroActions{display:flex;gap:8px;margin-top:16px}.heroPrimary,.heroSecondary{border:0;border-radius:11px;padding:10px 15px;font-weight:800;cursor:pointer}.heroPrimary{background:#fff;color:#0b4fa3}.heroSecondary{background:#ffffff18;color:#fff;border:1px solid #ffffff35}.heroBadge{min-width:205px;padding:18px;border-radius:18px;background:#ffffff16;border:1px solid #ffffff2d;backdrop-filter:blur(8px);z-index:1}.heroBadge span,.heroBadge small{display:block;font-size:11px;color:#dbeafe}.heroBadge b{display:block;font-size:29px;margin:7px 0}
+
+.sectionHead{display:flex;align-items:end;justify-content:space-between;gap:10px}.sectionHead .titleRow{margin-bottom:0}.storeSlider{margin-top:15px}
+@media(max-width:900px){.mainNav{display:none}.pointsChip em{display:none}.topin{gap:7px}.brandBtn small{display:none}}
+@media(max-width:650px){.topin{padding:9px 12px}.brandMark{width:38px;height:38px}.brandBtn b{font-size:15px}.demoPill,.pointsChip{display:none}.iconBtn{width:36px;height:36px}.actionBtn{padding:9px 11px}.cartAction{padding:9px 10px}.cartAction span{display:none}.homeHero{padding:23px 19px;min-height:250px}.homeHero h1{font-size:24px}.heroActions{margin-top:13px}.heroBadge{min-width:150px;padding:12px}.heroBadge b{font-size:23px}}
+@media(max-width:430px){.brandBtn{gap:7px}.brandMark{width:35px;height:35px;font-size:18px}.brandBtn b{font-size:13px}.loginAction{display:none}.cartAction{font-size:14px}.homeHero{min-height:275px}.heroBadge{display:none}.heroActions button{flex:1}}
+
+</style>
+
+<style id="v273-product-details-css">
+#productModal{backdrop-filter:blur(7px)}
+#productModal .modal,#productModal .modalBox,#productModal .productModalBox{
+  border-radius:24px!important;overflow:hidden!important;border:1px solid #e7edf6!important;
+  box-shadow:0 24px 70px rgba(15,50,95,.20)!important;
+}
+#productModal .v273-detail-wrap{display:grid;grid-template-columns:minmax(280px,.95fr) minmax(300px,1.05fr);gap:26px;align-items:stretch}
+#productModal .v273-detail-image{min-height:330px;border-radius:20px;background:linear-gradient(145deg,#f5f9ff,#edf5ff);display:flex;align-items:center;justify-content:center;overflow:hidden}
+#productModal .v273-detail-image img{width:100%;height:100%;max-height:420px;object-fit:contain;display:block}
+#productModal .v273-detail-info{display:flex;flex-direction:column;justify-content:center;padding:6px 4px}
+#productModal .v273-detail-badge{display:inline-flex;align-self:flex-start;padding:6px 11px;border-radius:999px;background:#e8f4ff;color:#0b4fa3;font-weight:800;font-size:12px;margin-bottom:10px}
+#productModal .v273-detail-title{font-size:28px;font-weight:900;color:#17324f;line-height:1.25;margin:0 0 10px}
+#productModal .v273-detail-desc{color:#667a92;line-height:1.9;font-size:14px;margin:0 0 18px}
+#productModal .v273-detail-price{font-size:24px;font-weight:900;color:#0b4fa3;margin-bottom:8px}
+#productModal .v273-detail-stock{font-size:13px;color:#5f7188;margin-bottom:18px}
+#productModal .v273-buy-row{display:flex;gap:10px;align-items:center}
+#productModal .v273-qty{height:46px;width:82px;border:1px solid #dbe5f0;border-radius:13px;text-align:center;font-size:16px;font-weight:800;outline:none}
+#productModal .v273-buy-btn{flex:1;height:46px;border:0;border-radius:13px;background:linear-gradient(135deg,#0b66d4,#0b4fa3);color:#fff;font-weight:900;cursor:pointer;box-shadow:0 9px 22px rgba(11,79,163,.20)}
+#productModal .v273-buy-btn:disabled{opacity:.5;cursor:not-allowed}
+@media(max-width:700px){
+  #productModal .v273-detail-wrap{grid-template-columns:1fr;gap:14px}
+  #productModal .v273-detail-image{min-height:230px}
+  #productModal .v273-detail-title{font-size:22px}
+}
+</style>
+
+
+<style id="v274-cart-css">
+#cartModal .box,#checkoutModal .box,#successModal .box{border-radius:24px!important;border:1px solid #e6edf6!important;box-shadow:0 24px 70px rgba(15,50,95,.18)!important}
+.v274-cart-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}
+.v274-cart-balance{background:#eef7ff;border:1px solid #d8eaff;border-radius:14px;padding:11px 13px;color:#0b4fa3;font-size:13px}
+.v274-cart-list{display:flex;flex-direction:column;gap:10px}
+.v274-cart-item{display:grid;grid-template-columns:1fr auto auto;gap:12px;align-items:center;padding:14px;border:1px solid #e7edf5;border-radius:16px;background:#fbfdff}
+.v274-cart-name{font-weight:900;color:#203a56}
+.v274-cart-unit{font-size:12px;color:#71839a;margin-top:4px}
+.v274-qty{display:flex;align-items:center;gap:8px;background:#f0f5fa;border-radius:12px;padding:4px}
+.v274-qty button{width:30px;height:30px;border:0;border-radius:9px;background:#fff;color:#0b4fa3;font-size:18px;font-weight:900;cursor:pointer}
+.v274-qty b{min-width:24px;text-align:center}
+.v274-remove{border:0;background:#fff0f0;color:#c52a2a;width:34px;height:34px;border-radius:10px;cursor:pointer;font-size:17px}
+.v274-total{display:flex;justify-content:space-between;gap:10px;padding:15px;margin-top:12px;border-radius:15px;background:#f5f9ff;font-weight:900;color:#17324f}
+.v274-discount{padding:11px 13px;margin-top:8px;border-radius:13px;background:#f0fff6;color:#187343;border:1px solid #d4f0df;font-size:13px}
+.v274-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.v274-primary{height:46px;border:0;border-radius:13px;background:linear-gradient(135deg,#0b66d4,#0b4fa3);color:#fff;font-weight:900;cursor:pointer}
+.v274-secondary{height:46px;border:1px solid #dce6f1;border-radius:13px;background:#fff;color:#29445f;font-weight:800;cursor:pointer}
+.v274-check-card{padding:15px;border:1px solid #e5edf6;border-radius:16px;background:#fbfdff;margin-bottom:10px}
+.v274-success{padding:18px;border-radius:18px;background:linear-gradient(145deg,#f1fff7,#f7fbff);border:1px solid #dcefe5}
+@media(max-width:600px){
+ .v274-cart-item{grid-template-columns:1fr auto;}.v274-remove{grid-column:2;grid-row:1}.v274-qty{grid-column:1;grid-row:2;width:max-content}
+ .v274-actions{grid-template-columns:1fr}
+}
+</style>
+
+
+<style id="v275-responsive-polish">
+/* V27.5 — responsive polish */
+html{scroll-behavior:smooth}
+body{overflow-x:hidden}
+button,input,select{font-family:inherit}
+img{max-width:100%}
+@media(max-width:1100px){
+  .container,.wrap,.main,.content{max-width:96%!important}
+  .grid,.products{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+}
+@media(max-width:820px){
+  .grid,.products{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  .card .pic{min-height:210px!important}
+  .hero,.slider{min-height:300px!important}
+  .header,.topbar{gap:8px!important}
+  .header .nav,.topbar .nav{flex-wrap:wrap}
+  .modal .box{width:min(94vw,760px)!important;max-height:90vh!important;overflow:auto!important}
+}
+@media(max-width:560px){
+  .grid,.products{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important}
+  .card{border-radius:15px!important}
+  .card .pic{min-height:150px!important}
+  .card .info{padding:10px!important}
+  .card .name{font-size:14px!important}
+  .card .desc{font-size:11px!important;line-height:1.6!important}
+  .card .price{font-size:13px!important}
+  .card .btn,.btn{min-height:42px}
+  .slider,.hero{min-height:245px!important;border-radius:18px!important}
+  .slider h1,.hero h1{font-size:23px!important}
+  .slider p,.hero p{font-size:12px!important}
+  .tools{display:grid!important;grid-template-columns:1fr 1fr!important;gap:8px!important}
+  .tools .search{grid-column:1/-1!important;width:100%!important}
+  .tools .select,.tools button{width:100%!important;min-width:0!important}
+  .v274-actions{grid-template-columns:1fr!important}
+  #productModal .v273-detail-wrap{grid-template-columns:1fr!important}
+  #productModal .v273-detail-image{min-height:210px!important}
+}
+@media(max-width:390px){
+  .grid,.products{grid-template-columns:1fr 1fr!important;gap:7px!important}
+  .card .pic{min-height:125px!important}
+  .card .info{padding:8px!important}
+  .card .name{font-size:12px!important}
+  .card .btn{font-size:11px!important;padding:0 6px!important}
+}
+.v275-fade{animation:v275fade .35s ease both}
+@keyframes v275fade{from{opacity:.5;transform:translateY(4px)}to{opacity:1;transform:none}}
+</style>
+
+<style id="v276-quickcat-fix">
+.quickWrap{padding-top:10px;padding-bottom:2px}
+.quickWrap .quickCategories{padding:0 2px 2px}
+</style>
+
+<style id="v279-mobile-back">
+.v279-mobile-back{
+  display:none;
+}
+@media(max-width:700px){
+  .v279-mobile-back{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+    height:40px;
+    padding:0 14px;
+    border:1px solid #dce6f1;
+    border-radius:11px;
+    background:#fff;
+    color:#29445f;
+    font-weight:800;
+    font-size:13px;
+    cursor:pointer;
+    margin-bottom:10px;
+    width:100%;
+  }
+  .v279-mobile-back:active{
+    transform:scale(.98);
+  }
+}
+</style>
+
+
+<style id="v28-product-details-pro">
+/* V28 — Professional product details */
+#productModal .box{
+  width:min(920px,94vw)!important;
+  max-width:920px!important;
+  padding:0!important;
+  overflow:hidden!important;
+  border-radius:26px!important;
+  background:#fff!important;
+  border:1px solid #e5ebf3!important;
+  box-shadow:0 28px 90px rgba(17,48,82,.22)!important;
+}
+#productModal .v28-modal-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  padding:18px 24px;
+  border-bottom:1px solid #edf1f6;
+  background:#fff;
+}
+#productModal .v28-modal-label{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  color:#71829a;
+  font-size:12px;
+  font-weight:800;
+}
+#productModal .v28-modal-label span{
+  width:8px;height:8px;border-radius:50%;background:#0b66d4;
+}
+#productModal .v28-close{
+  width:38px;height:38px;border:1px solid #e1e8f1;border-radius:11px;
+  background:#fff;color:#53677f;font-size:20px;cursor:pointer;
+}
+#productModal .v28-detail{
+  display:grid;
+  grid-template-columns:minmax(330px, .92fr) minmax(340px,1.08fr);
+  gap:30px;
+  padding:26px;
+  direction:ltr;
+}
+#productModal .v28-media{
+  position:relative;
+  min-height:430px;
+  border-radius:22px;
+  background:linear-gradient(145deg,#f7faff,#edf4fc);
+  border:1px solid #e6edf5;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+}
+#productModal .v28-media img{
+  width:100%;
+  height:100%;
+  max-height:430px;
+  object-fit:contain;
+  padding:18px;
+}
+#productModal .v28-media-placeholder{font-size:92px;opacity:.85}
+#productModal .v28-info{
+  direction:rtl;
+  text-align:right;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  min-width:0;
+}
+#productModal .v28-category{
+  display:inline-flex;
+  align-self:flex-start;
+  padding:7px 12px;
+  border-radius:999px;
+  background:#edf6ff;
+  color:#0b4fa3;
+  font-size:12px;
+  font-weight:900;
+  margin-bottom:13px;
+}
+#productModal .v28-title{
+  margin:0 0 13px!important;
+  color:#152f4a!important;
+  font-size:30px!important;
+  line-height:1.45!important;
+  font-weight:950!important;
+  letter-spacing:0!important;
+  overflow-wrap:anywhere;
+}
+#productModal .v28-description{
+  margin:0 0 20px!important;
+  padding:16px 17px;
+  background:#f8fafc;
+  border:1px solid #edf1f5;
+  border-radius:15px;
+  color:#52677f!important;
+  font-size:15px!important;
+  line-height:2!important;
+  white-space:pre-line;
+  min-height:82px;
+  overflow-wrap:anywhere;
+}
+#productModal .v28-price{
+  color:#0b4fa3;
+  font-size:26px;
+  line-height:1.4;
+  font-weight:950;
+  margin-bottom:8px;
+}
+#productModal .v28-stock{
+  color:#657990;
+  font-size:13px;
+  line-height:1.7;
+  margin-bottom:18px;
+}
+#productModal .v28-buy{
+  width:100%;
+  min-height:50px;
+  border:0;
+  border-radius:14px;
+  background:linear-gradient(135deg,#0b66d4,#0b4fa3);
+  color:#fff;
+  font-size:15px;
+  font-weight:900;
+  cursor:pointer;
+  box-shadow:0 10px 24px rgba(11,79,163,.18);
+}
+#productModal .v28-buy:disabled{opacity:.5;cursor:not-allowed;box-shadow:none}
+#productModal .v28-meta{
+  display:flex;
+  gap:9px;
+  flex-wrap:wrap;
+  margin-top:14px;
+}
+#productModal .v28-meta span{
+  padding:7px 10px;
+  border-radius:10px;
+  background:#f5f8fb;
+  color:#667b91;
+  font-size:11px;
+  font-weight:800;
+}
+@media(max-width:720px){
+  #productModal .box{width:94vw!important;border-radius:20px!important}
+  #productModal .v28-modal-head{padding:14px 16px}
+  #productModal .v28-detail{
+    grid-template-columns:1fr;
+    gap:16px;
+    padding:16px;
+  }
+  #productModal .v28-media{min-height:245px;max-height:300px}
+  #productModal .v28-media img{max-height:290px;padding:10px}
+  #productModal .v28-title{font-size:23px!important;line-height:1.5!important}
+  #productModal .v28-description{font-size:14px!important;line-height:1.95!important}
+  #productModal .v28-price{font-size:23px}
+}
+</style>
+
+</head>
+<body>
+<header class="top">
+  <div class="topin">
+    <button class="brand brandBtn" type="button" onclick="focusProducts()" aria-label="الرئيسية">
+      <span class="brandMark">⭐</span><span><b>متجر النقاط</b><small>استبدل نقاطك بذكاء</small></span>
+    </button>
+    <nav class="mainNav" aria-label="التنقل">
+      <button type="button" class="navLink active" onclick="focusProducts()">الرئيسية</button>
+      <button type="button" class="navLink" onclick="focusProducts()">المنتجات</button>
+      <button type="button" class="navLink" onclick="openCoupons()">العروض</button>
+    </nav>
+    <div class="actions">
+      <div class="pill demoPill">🧪 تجريبي</div>
+      <div class="pointsChip" id="pointsPill"><span class="pointsIcon">⭐</span><span><small>رصيدك</small><b id="points">0</b></span><em>نقطة</em></div>
+      <button class="iconBtn hidden" id="notifyBtn" type="button" onclick="openNotifications()" aria-label="التنبيهات">🔔<span class="notifyCount hidden" id="notifyCount">0</span></button>
+      <button class="actionBtn loginAction" id="loginBtn" onclick="openLogin()">دخول</button>
+      <button class="iconBtn" id="profileBtn" type="button" onclick="openProfile()" aria-label="حسابي">👤</button>
+      <button class="iconBtn" id="couponBtn" type="button" onclick="openCoupons()" aria-label="الكوبونات">🎟️</button>
+      <button class="cartAction hidden" id="cartBtn" onclick="openCart()">🛒 <span>السلة</span><b id="cartCount">0</b></button>
+      <button class="iconBtn dangerIcon hidden" id="logoutBtn" type="button" onclick="logout()" aria-label="خروج">↪</button>
+    </div>
+  </div>
+</header>
+<div class="wrap quickWrap">
+</div>
+
+<div class="wrap">
+<section class="hero homeHero"><div class="heroCopy"><span class="heroKicker">✨ تجربة متجر أسهل</span><h1 id="welcome">أهلاً بك 👋</h1><p>استبدل نقاطك بمنتجاتك المفضلة، اكتشف العروض الجديدة وتابع طلباتك من مكان واحد.</p><div class="heroActions"><button class="heroPrimary" onclick="focusProducts()">🛍️ ابدأ التسوق</button><button class="heroSecondary" onclick="openCoupons()">🎁 شوف العروض</button></div></div><div class="heroBadge"><span>رصيد النقاط</span><b>⭐ <span id="heroPoints">0</span></b><small>نقطة متاحة للشراء</small></div></section>
+
+<section class="storeSlider" id="storeSlider" aria-label="عروض المتجر">
+  <div class="sliderTrack" id="sliderTrack"></div>
+  <button class="sliderArrow sliderPrev" type="button" onclick="sliderPrev()" aria-label="السابق">‹</button>
+  <button class="sliderArrow sliderNext" type="button" onclick="sliderNext()" aria-label="التالي">›</button>
+  <div class="sliderDots" id="sliderDots"></div>
+</section>
+<div class="tools"><input class="search" id="search" placeholder="🔎 ابحث عن منتج..." oninput="renderProducts()"><select class="select" id="category" onchange="renderProducts()"><option value="">كل التصنيفات</option></select><select class="select" id="sort" onchange="renderProducts()"><option value="default">ترتيب المنتجات</option><option value="low">الأقل نقاطاً</option><option value="high">الأعلى نقاطاً</option><option value="name">الاسم أ-ي</option></select><button type="button" class="clearFiltersBtn" onclick="clearStoreFilters()">مسح الفلاتر</button></div>
+<div class="titleRow"><h2>المنتجات 🎁</h2><span class="muted" id="productCount"></span></div>
+<div class="v272-filter-row">
+    <select id="v272Category" aria-label="التصنيف">
+      <option value="">كل التصنيفات</option>
+    </select>
+    <select id="v272Sort" aria-label="ترتيب المنتجات">
+      <option value="default">الترتيب الافتراضي</option>
+      <option value="priceAsc">السعر: الأقل أولاً</option>
+      <option value="priceDesc">السعر: الأعلى أولاً</option>
+      <option value="newest">الأحدث أولاً</option>
+      <option value="popular">الأكثر طلباً</option>
+    </select>
+    <button type="button" id="v272Reset" class="v272-reset">مسح الفلاتر</button>
+  </div>
+</section>
+<div id="v272ResultInfo" class="v272-result-info"></div>
+
+<div id="products" class="grid"></div>
+</div>
+
+<div class="modal" id="loginModal"><div class="box"><h2>🔐 تسجيل الدخول</h2><input class="input" id="loginUser" placeholder="اسم المستخدم"><input class="input" id="loginPass" type="password" placeholder="كلمة المرور"><div class="msg" id="loginMsg"></div><button class="btn" style="width:100%;margin-top:5px" onclick="login()">دخول</button><button class="btn secondary" style="width:100%;margin-top:8px" onclick="demoLogin()">👤 دخول زبون تجريبي</button><button class="close" onclick="openRegister()">إنشاء حساب جديد</button><button class="close" onclick="closeModals()">إغلاق</button></div></div>
+<div class="modal" id="registerModal"><div class="box"><h2>👤 إنشاء حساب</h2><input class="input" id="regUser" placeholder="اسم المستخدم"><input class="input" id="regPass" type="password" placeholder="كلمة المرور — 6 أحرف على الأقل"><div class="msg" id="regMsg"></div><button class="btn" style="width:100%;margin-top:5px" onclick="register()">إنشاء الحساب</button><button class="close" onclick="openLogin()">عندي حساب</button><button class="close" onclick="closeModals()">إغلاق</button></div></div>
+<div class="modal" id="cartModal"><div class="box"><h2>🛒 سلة المشتريات</h2><div id="cartBody"></div><button class="btn" style="width:100%;margin-top:12px" onclick="checkout()">تأكيد الطلب</button><button class="close" onclick="closeModals()">إغلاق</button></div></div>
+<div class="modal" id="productModal">
+  <div class="box">
+    <div class="v28-modal-head">
+      <div class="v28-modal-label"><span></span>تفاصيل المنتج</div>
+      <button class="v28-close" type="button" onclick="closeModals()" aria-label="إغلاق">×</button>
+    </div>
+    <div class="v28-detail">
+      <div class="v28-media" id="dPic"><div class="v28-media-placeholder">🎁</div></div>
+      <div class="v28-info">
+        <span class="v28-category" id="dCategory">منتج</span>
+        <h2 class="v28-title" id="dName">اسم المنتج</h2>
+        <p class="v28-description" id="dDesc">وصف المنتج</p>
+        <div class="v28-price" id="dPrice">⭐ 0 نقطة</div>
+        <div class="v28-stock" id="dStock">📦 التوفر</div>
+        <button class="v28-buy" id="dBuy" type="button">🛒 إضافة للسلة</button>
+        <div class="v28-meta">
+          <span>⭐ الاستبدال بالنقاط</span>
+          <span>🛡️ طلب آمن</span>
+        </div>
+      </div>
+    </div>
+    <button class="v279-mobile-back" type="button" onclick="closeModals()">← رجوع</button>
+  </div>
+</div>
+<div class="modal" id="checkoutModal">
+  <div class="box">
+    <h2>🛒 تأكيد الطلب</h2>
+    <div id="checkoutSummary"></div>
+    <div class="notice">⭐ سيتم خصم النقاط بعد الضغط على «تأكيد الشراء».</div>
+    <button class="btn" style="width:100%;margin-top:8px" onclick="confirmCheckout()">✅ تأكيد الشراء</button>
+    <button class="close" onclick="closeModals()">رجوع للسلة</button>
+  </div>
+</div>
+<div class="modal" id="successModal">
+  <div class="box" style="text-align:center">
+    <div style="font-size:54px">🎉</div>
+    <h2>تم إنشاء طلبك بنجاح</h2>
+    <div id="successDetails"></div>
+    <button class="btn" style="width:100%;margin-top:12px" onclick="openOrders()">📦 عرض طلباتي</button>
+    <button class="close" onclick="closeModals()">متابعة التسوق</button>
+  </div>
+</div>
+
+<div class="modal" id="ordersModal">
+  <div class="box" style="max-width:760px">
+    <h2>📦 طلباتي</h2>
+    <div id="ordersSummary" class="notice"></div>
+    <div id="ordersList"></div>
+    <button class="close" onclick="closeModals()">إغلاق</button>
+  </div>
+</div>
+
+
+
+<div class="modal" id="couponModal">
+  <div class="box" style="max-width:650px">
+    <h2>🎟️ الكوبونات والعروض</h2>
+    <div id="couponMessage"></div>
+    <div style="display:flex;gap:8px;margin:12px 0">
+      <input id="couponInput" placeholder="اكتب كود الخصم" style="flex:1">
+      <button class="btn" onclick="applyCoupon()">تطبيق</button>
+    </div>
+    <div id="availableCoupons"></div>
+    <button class="close" onclick="closeModals()">إغلاق</button>
+  </div>
+</div>
+<div class="modal" id="notificationsModal">
+  <div class="box" style="max-width:700px">
+    <h2>🔔 التنبيهات</h2>
+    <div id="notificationsList"></div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px">
+      <button class="btn secondary" onclick="markAllNotificationsRead()">✓ تعليم الكل كمقروء</button>
+      <button class="btn secondary" onclick="clearNotifications()">🗑️ مسح التنبيهات</button>
+    </div>
+    <button class="close" onclick="closeModals()">إغلاق</button>
+  </div>
+</div>
+<div class="modal" id="pointsModal">
+  <div class="box" style="max-width:760px">
+    <h2>⭐ حسابي ونقاطي</h2>
+    <div id="pointsOverview"></div>
+    <h3 style="margin-top:18px">📈 سجل النقاط</h3>
+    <div id="pointsHistory"></div>
+    <button class="close" onclick="closeModals()">إغلاق</button>
+  </div>
+</div>
+
+<div class="modal" id="profileModal">
+  <div class="box" style="max-width:720px">
+    <h2>👤 حسابي</h2>
+    <div id="profileCard"></div>
+    <div class="sectionTitle">✏️ تعديل الحساب</div>
+    <div class="editProfileGrid">
+      <div style="display:none"><label>كلمة المرور الجديدة</label><input id="profilePassword" type="password"></div>
+    </div>
+    <div class="avatarUploadRow">
+      <label class="avatarUploadButton" for="profileAvatar">📷 تغيير الصورة</label>
+      <input id="profileAvatar" type="file" accept="image/*" hidden>
+      <button class="btn secondary" type="button" onclick="removeProfileAvatar()">🗑️ إزالة الصورة</button>
+    </div>
+    <button class="btn" style="width:100%;margin-top:10px" onclick="saveProfile()">💾 حفظ التغييرات</button>
+    <button class="close" onclick="closeModals()">إغلاق</button>
+  </div>
+
+<div class="modal" id="accountModal"><div class="box"><h2>👤 حسابي</h2><div class="accountGrid"><div class="stat"><small>اسم المستخدم</small><b id="aUser">—</b></div><div class="stat"><small>رمز الزبون</small><b id="aCode">—</b></div><div class="stat"><small>الرصيد</small><b>⭐ <span id="aPoints">0</span></b></div><div class="stat"><small>عدد الطلبات</small><b id="aOrdersCount">0</b></div></div><h3>📦 طلباتي</h3><div id="orders"></div><button class="btn secondary" style="width:100%;margin-bottom:8px" onclick="openOrders()">📦 عرض طلباتي</button><button class="btn secondary" style="width:100%;margin-bottom:8px" onclick="openPoints()">⭐ عرض نقاطي وسجل النقاط</button><button class="close" onclick="closeModals()">إغلاق</button></div></div>
+<script>
+let products=[],cart=[],me=null,offlineDemo=false;
+const demoProducts=[
+{id:1,name:'سيروم فيتامين C',description:'سيروم للعناية بالبشرة ومنحها إشراقة.',price_points:2500,stock:12,category:'عناية بالبشرة',image:''},
+{id:2,name:'واقي شمس',description:'واقي شمس للاستخدام اليومي.',price_points:3500,stock:8,category:'عناية بالبشرة',image:''},
+{id:3,name:'مرطب للبشرة',description:'مرطب خفيف للاستخدام اليومي.',price_points:1800,stock:20,category:'مرطبات',image:''},
+{id:4,name:'غسول للوجه',description:'غسول لطيف للتنظيف اليومي.',price_points:2200,stock:0,category:'تنظيف',image:''},
+{id:5,name:'تونر مرطب',description:'تونر خفيف للعناية اليومية.',price_points:1600,stock:15,category:'تونر',image:''},
+{id:6,name:'سيروم نياسيناميد',description:'سيروم مناسب للعناية بالبشرة.',price_points:2800,stock:10,category:'سيرومات',image:''},
+{id:7,name:'كريم مرطب',description:'كريم مرطب للاستخدام اليومي.',price_points:3000,stock:7,category:'مرطبات',image:''},
+{id:8,name:'ماسك للوجه',description:'ماسك عناية للبشرة.',price_points:1900,stock:9,category:'ماسكات',image:''}
+];
+const $=id=>document.getElementById(id);
+async function api(url,opts={}){const res=await fetch(url,{credentials:'same-origin',...opts,headers:{'Content-Type':'application/json',...(opts.headers||{})}});let data={};try{data=await res.json()}catch{}if(!res.ok)throw new Error(data.error||'حدث خطأ');return data}
+function closeModals(){document.querySelectorAll('.modal').forEach(x=>x.style.display='none')}
+function openLogin(){closeModals();$('loginMsg').textContent='';$('loginModal').style.display='flex'}
+function openRegister(){closeModals();$('regMsg').textContent='';$('registerModal').style.display='flex'}
+function openCart(){const m=$('cartModal');if(!m)return;m.style.display='flex';try{renderCart()}catch(e){console.error('Cart render error:',e)}}
+async function login(silent=false){try{const d=await api('/api/auth/login',{method:'POST',body:JSON.stringify({username:$('loginUser').value.trim(),password:$('loginPass').value})});if(d.type==='admin'){location='/admin';return}await loadMe();closeModals();if(!silent)alert('تم تسجيل الدخول بنجاح')}catch(e){if(!silent)$('loginMsg').textContent=e.message;else throw e}}
+async function demoLogin(silent=false){const u='demo_customer';if(!silent)$('loginMsg').textContent='جاري تجهيز حساب الزبون التجريبي...';try{await api('/api/auth/register',{method:'POST',body:JSON.stringify({username:u,password:'123456'})});$('loginUser').value=u;$('loginPass').value='123456';await login(silent)}catch(e){offlineDemo=true;me={username:u,customer_code:'DEMO-1001',points:20000,orders:[]};cart=[];updateHeader();closeModals();if(!silent)alert('دخلنا بالزبون التجريبي للمعاينة');}}
+async function register(){try{const u=$('regUser').value.trim(),p=$('regPass').value;if(!u||!p)return $('regMsg').textContent='اكتب اسم المستخدم وكلمة المرور';await api('/api/auth/register',{method:'POST',body:JSON.stringify({username:u,password:p})});$('loginUser').value=u;$('loginPass').value=p;await login()}catch(e){$('regMsg').textContent=e.message}}
+async function logout(){try{await api('/api/auth/logout',{method:'POST'})}catch{}me=null;cart=[];updateHeader();renderCart()}
+async function loadMe(){try{const d=await api('/api/me');me=d.type==='user'?d:null}catch{me=null}updateHeader()}
+function updateHeader(){const logged=!!me;$('loginBtn').classList.toggle('hidden',logged);$('cartBtn').classList.toggle('hidden',!logged);$('logoutBtn').classList.toggle('hidden',!logged);$('notifyBtn').classList.toggle('hidden',!logged);$('points').textContent=logged?Number(me.points).toLocaleString():'0';$('heroPoints').textContent=logged?Number(me.points).toLocaleString():'0';$('welcome').textContent=logged?'أهلاً '+me.username+' 👋':'أهلاً بك 👋';renderNotificationCount();if(typeof renderCart==='function')renderCart();}
+let sliderIndex=0,sliderTimer=null;
+function renderSlider(){
+  const track=$("sliderTrack"),dots=$("sliderDots"); if(!track||!dots)return;
+  const items=(products||[]).filter(p=>Number(p.stock)>0).slice(0,5);
+  const slides=items.length?items:[{id:null,name:'اكتشف منتجات متجر النقاط',description:'اختَر المنتج المناسب واستبدل نقاطك بسهولة.',price_points:0,image:''}];
+  track.innerHTML=slides.map((p,i)=>`<article class="sliderItem ${i===sliderIndex?'active':''}">
+    <div class="sliderContent"><span class="sliderKicker">⭐ عروض متجر النقاط</span><h2>${esc(p.name)}</h2><p>${esc(p.description||'منتج مميز متوفر الآن ضمن متجر النقاط.')}</p>${Number(p.price_points)>0?`<div class="sliderPrice">⭐ ${Number(p.price_points).toLocaleString()} نقطة</div>`:''}<button class="sliderBtn" type="button" onclick="${p.id!=null?`openProduct(${p.id})`:'focusProducts()'}">${p.id!=null?'شاهد المنتج':'تصفح المنتجات'} ←</button></div>
+    <div class="sliderVisual">${p.image?`<img src="${esc(p.image)}" alt="${esc(p.name)}">`:'<div class="placeholder">🎁</div>'}</div>
+  </article>`).join('');
+  dots.innerHTML=slides.map((_,i)=>`<button class="sliderDot ${i===sliderIndex?'active':''}" type="button" onclick="goSlider(${i})" aria-label="الشريحة ${i+1}"></button>`).join('');
+  clearInterval(sliderTimer); sliderTimer=setInterval(()=>sliderNext(),5000);
+}
+function goSlider(i){const n=Math.max(1,$$(".sliderItem").length);sliderIndex=(i+n)%n;renderSlider()}
+function sliderNext(){const n=$$(".sliderItem").length;if(!n)return;sliderIndex=(sliderIndex+1)%n;renderSlider()}
+function sliderPrev(){const n=$$(".sliderItem").length;if(!n)return;sliderIndex=(sliderIndex-1+n)%n;renderSlider()}
+function focusProducts(){const el=$("products");if(el)el.scrollIntoView({behavior:'smooth',block:'start'})}
+function $$(sel){return document.querySelectorAll(sel)}
+async function loadProducts(){try{products=await api('/api/products');offlineDemo=false;}catch(e){offlineDemo=true;products=JSON.parse(localStorage.getItem('demoProductsV26')||'null')||demoProducts;localStorage.setItem('demoProductsV26',JSON.stringify(products));}renderProducts();renderCategories();renderSlider()}
+function renderCategories(){const el=$("category");if(el){const cats=[...new Set(products.map(p=>p.category||p.category_name||p.type).filter(Boolean))];el.innerHTML='<option value="">كل التصنيفات</option>'+cats.map(c=>`<option value="${esc(c)}">${esc(c)}</option>`).join('')}}
+function focusProducts(){const el=$("products");if(el)el.scrollIntoView({behavior:'smooth',block:'start'})}
+function renderNotificationCount(){const el=$("notifyCount"),btn=$("notifyBtn");if(!el||!btn)return;const count=demoNotifications().filter(n=>!n.read).length;el.textContent=count>99?'99+':count;el.classList.toggle('hidden',count===0)}
+function renderProducts(){let arr=[...products],q=$("search").value.trim().toLowerCase(),s=$("sort").value,c=$("category")?$("category").value:'';if(q)arr=arr.filter(p=>(p.name+' '+(p.description||'')).toLowerCase().includes(q));if(c)arr=arr.filter(p=>(p.category||p.category_name||p.type||'')===c);if(s==='low')arr.sort((a,b)=>a.price_points-b.price_points);if(s==='high')arr.sort((a,b)=>b.price_points-a.price_points);if(s==='name')arr.sort((a,b)=>a.name.localeCompare(b.name,'ar'));$("productCount").textContent=arr.length+' منتج';$("products").innerHTML=arr.length?arr.map(p=>{const out=Number(p.stock)<=0;return `<article class="card"><div class="pic" onclick="openProduct(${p.id})" style="cursor:pointer">${p.image?`<img src="${esc(p.image)}" alt="${esc(p.name)}">`:'<div class="placeholder">🎁</div>'}</div><div class="info"><div class="name" onclick="openProduct(${p.id})" style="cursor:pointer">${esc(p.name)}</div><div class="desc">${esc(p.description||'')}</div><div class="price">⭐ ${Number(p.price_points).toLocaleString()} نقطة</div><div class="stock">${out?'❌ نافد من المخزون':'📦 المتوفر: '+Number(p.stock)}</div><button class="btn buy" ${out?'disabled style="opacity:.5"':''} onclick="addToCart(${p.id})">${out?'غير متوفر':'إضافة للسلة'}</button></div></article>`}).join(''):'<div class="empty" style="grid-column:1/-1">لا توجد منتجات مطابقة.</div>'}
+function openProduct(id){const p=products.find(x=>x.id===id);if(!p)return;$("dName").textContent=p.name;$("dPrice").textContent='⭐ '+Number(p.price_points).toLocaleString()+' نقطة';$("dDesc").textContent=p.description||'لا يوجد وصف لهذا المنتج.';$("dStock").textContent=Number(p.stock)>0?'📦 المتوفر: '+Number(p.stock):'❌ المنتج نافد من المخزون';$("dCategory").textContent=p.category||p.category_name||p.type||'منتج';$("dPic").innerHTML=p.image?`<img src="${esc(p.image)}" alt="${esc(p.name)}">`:'<div class="placeholder">🎁</div>';const b=$("dBuy");b.disabled=Number(p.stock)<=0;b.style.opacity=b.disabled?.5:1;b.textContent=b.disabled?'غير متوفر':'إضافة للسلة';b.onclick=()=>addToCart(p.id);$("productModal").style.display='flex'}
+function esc(v){return String(v??'').replace(/[&<>'"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[m]))}
+function addToCart(id){if(!me)return openLogin();const p=products.find(x=>x.id===id);if(!p||p.stock<=0)return;const x=cart.find(x=>x.productId===id);if(x){if(x.qty>=p.stock)return alert('ما نكدر نضيف أكثر من الكمية المتوفرة');x.qty++}else cart.push({productId:id,name:p.name,pricePoints:p.price_points,qty:1,max:p.stock});renderCart();$('cartCount').textContent=cart.reduce((n,x)=>n+x.qty,0);alert('تمت إضافة المنتج للسلة')}
+function renderCart(){
+  const body=$('cartBody');
+  if(!cart.length){
+    body.innerHTML='<div class="empty" style="padding:38px 15px;text-align:center"><div style="font-size:42px">🛒</div><b style="display:block;margin:8px 0;color:#203a56">السلة فارغة</b><span class="muted">اختار منتجاتك وراح تظهر هنا.</span></div>';
+    $('cartCount').textContent='0';
+    return;
+  }
+  let subtotal=0;
+  cart.forEach(x=>subtotal+=Number(x.pricePoints)*Number(x.qty));
+  const applied=getAppliedCoupon();
+  const discount=couponDiscount(subtotal,applied);
+  const total=Math.max(0,subtotal-discount);
+  const enough=Number(me?.points||0)>=total;
+
+  body.innerHTML=
+    '<div class="v274-cart-head"><div><h3 style="margin:0;color:#17324f">مراجعة مشترياتك</h3><div class="muted">'+cart.reduce((n,x)=>n+Number(x.qty),0)+' قطعة</div></div>'+
+    '<div class="v274-cart-balance">⭐ رصيدك: <b>'+Number(me?.points||0).toLocaleString()+'</b></div></div>'+
+    '<div class="v274-cart-list">'+
+    cart.map((x,i)=>{
+      return `<div class="v274-cart-item">
+        <div><div class="v274-cart-name">${esc(x.name)}</div><div class="v274-cart-unit">⭐ ${Number(x.pricePoints).toLocaleString()} نقطة للقطعة</div></div>
+        <div class="v274-qty"><button onclick="changeQty(${i},-1)">−</button><b>${x.qty}</b><button onclick="changeQty(${i},1)">+</button></div>
+        <button class="v274-remove" title="حذف" onclick="removeCartItem(${i})">🗑️</button>
+      </div>`;
+    }).join('')+'</div>'+
+    '<div class="v274-total"><span>الإجمالي قبل الخصم</span><span>⭐ '+subtotal.toLocaleString()+' نقطة</span></div>'+
+    (applied?`<div class="v274-discount">🎟️ الكوبون <b>${esc(applied.code)}</b> مطبق — الخصم ⭐ ${discount.toLocaleString()} نقطة</div>
+      <div class="v274-total"><span>الإجمالي بعد الخصم</span><span>⭐ ${total.toLocaleString()} نقطة</span></div>`:'')+
+    (enough
+      ? '<div class="notice" style="margin-top:10px">✅ بعد الشراء سيبقى لديك <b>'+ (Number(me.points)-total).toLocaleString() +' نقطة</b>.</div>'
+      : '<div class="notice" style="background:#fff0f0;border-color:#f2b8b8;color:#a61b1b;margin-top:10px">❌ نقاطك غير كافية لإتمام الطلب.</div>'+
+        '<div class="muted" style="margin-top:6px">تحتاج إلى '+Math.max(0,total-Number(me?.points||0)).toLocaleString()+' نقطة إضافية.</div>');
+
+  $('cartCount').textContent=cart.reduce((n,x)=>n+Number(x.qty),0);
+  if(typeof renderNotifications==='function') renderNotifications();
+}
+function removeCartItem(i){if(!cart[i])return;cart.splice(i,1);renderCart();}
+function changeQty(i,d){const x=cart[i];x.qty+=d;if(x.qty<=0)cart.splice(i,1);else if(x.qty>x.max)x.qty=x.max;renderCart();$('cartCount').textContent=cart.reduce((n,x)=>n+x.qty,0)}
+function checkout(){
+  if(!me)return openLogin();
+  if(!cart.length)return alert('السلة فارغة');
+
+  for(const x of cart){
+    const p=products.find(p=>p.id===x.productId);
+    if(!p || Number(p.stock)<Number(x.qty))
+      return alert('⚠️ الكمية المطلوبة من "'+(p?.name||x.name)+'" غير متوفرة حالياً.');
+  }
+
+  const subtotal=cart.reduce((n,x)=>n+Number(x.pricePoints)*Number(x.qty),0);
+  const applied=getAppliedCoupon();
+  const discount=couponDiscount(subtotal,applied);
+  const total=Math.max(0,subtotal-discount);
+  if(Number(me.points)<total)return alert('❌ نقاطك غير كافية لإتمام هذا الطلب.');
+
+  $('checkoutSummary').innerHTML =
+    cart.map(x=>`<div class="cartLine">
+      <div><b>${esc(x.name)}</b><div class="muted">⭐ ${Number(x.pricePoints).toLocaleString()} نقطة × ${x.qty}</div></div>
+      <b>⭐ ${(Number(x.pricePoints)*Number(x.qty)).toLocaleString()}</b>
+    </div>`).join('')+
+    `<div class="total"><span>المجموع قبل الخصم</span><span>⭐ ${subtotal.toLocaleString()} نقطة</span></div>
+     ${applied?`<div class="couponApplied">🎟️ ${esc(applied.code)} — خصم ⭐ ${discount.toLocaleString()} نقطة</div>`:''}
+     <div class="total"><span>المطلوب بعد الخصم</span><span>⭐ ${total.toLocaleString()} نقطة</span></div>
+     <div class="stat" style="margin-top:10px"><small>رصيدك بعد الشراء</small><b>${(Number(me.points)-total).toLocaleString()} نقطة</b></div>`;
+
+  $('cartModal').style.display='none';
+  $('checkoutModal').style.display='flex';
+}
+
+async function confirmCheckout(){
+  if(!me || !cart.length)return;
+  const subtotal=cart.reduce((n,x)=>n+Number(x.pricePoints)*Number(x.qty),0);
+  const applied=getAppliedCoupon();
+  const discount=couponDiscount(subtotal,applied);
+  const total=Math.max(0,subtotal-discount);
+  if(Number(me.points)<total)return alert('❌ نقاطك غير كافية.');
+
+  for(const x of cart){
+    const p=products.find(p=>p.id===x.productId);
+    if(!p || Number(p.stock)<Number(x.qty))
+      return alert('⚠️ تغير المخزون. راجع السلة وحاول مرة ثانية.');
+  }
+
+  const itemsSnapshot=cart.map(x=>({name:x.name,qty:Number(x.qty),price_points:Number(x.pricePoints)}));
+
+  if(offlineDemo){
+    const order={
+      id:Date.now(),
+      status:'new',
+      total_points:total,
+      created_at:new Date().toLocaleString('ar-IQ'),
+      items:JSON.stringify(itemsSnapshot)
+    };
+
+    me.points-=total;
+    ensurePointsHistory();
+    me.pointsHistory.push({amount:-total,reason:'شراء طلب #'+order.id,created_at:new Date().toLocaleString('ar-IQ')});
+    me.orders=me.orders||[];
+    me.orders.unshift(order);
+    notifyOrderCreated(order);
+    localStorage.setItem('demoCustomerV26',JSON.stringify(me));
+
+    products=products.map(p=>{
+      const x=cart.find(c=>c.productId===p.id);
+      return x ? {...p,stock:Math.max(0,Number(p.stock)-Number(x.qty))} : p;
+    });
+    localStorage.setItem('demoProductsV26',JSON.stringify(products));
+
+    cart=[];
+    updateHeader();
+    renderProducts();
+    renderCart();
+
+    $('checkoutModal').style.display='none';
+    $('successDetails').innerHTML=
+      `<div class="stat"><small>رقم الطلب</small><b>#${order.id}</b></div>
+       <div class="stat" style="margin-top:8px"><small>المبلغ</small><b>⭐ ${total.toLocaleString()} نقطة</b></div>
+       <div class="stat" style="margin-top:8px"><small>رصيدك المتبقي</small><b>${Number(me.points).toLocaleString()} نقطة</b></div>`;
+    $('successModal').style.display='flex';
+    return;
+  }
+
+  try{
+    const d=await api('/api/orders',{
+      method:'POST',
+      body:JSON.stringify({items:cart.map(x=>({productId:x.productId,qty:x.qty})),coupon_code:(getAppliedCoupon()?.code||'')})
+    });
+    cart=[];
+    await loadMe();
+    await loadProducts();
+    $('checkoutModal').style.display='none';
+    $('successDetails').innerHTML=
+      `<div class="stat"><small>رقم الطلب</small><b>#${d.orderId}</b></div>
+       <div class="stat" style="margin-top:8px"><small>حالة الطلب</small><b>جديد</b></div>`;
+    $('successModal').style.display='flex';
+    updateHeader();
+    renderCart();
+  }catch(e){
+    alert(e.message||'تعذر إنشاء الطلب حالياً');
+  }
+}
+
+
+function statusLabel(status){
+  const map={new:'جديد',processing:'قيد المعالجة',completed:'مكتمل',cancelled:'ملغي'};
+  return map[status]||status||'جديد';
+}
+function statusClass(status){
+  return status==='completed'?'ok':status==='cancelled'?'bad':status==='processing'?'warn':'';
+}
+function parseOrderItems(order){
+  try{return typeof order.items==='string'?JSON.parse(order.items):(order.items||[])}catch(e){return []}
+}
+function renderOrders(){
+  const list=$('ordersList');
+  const orders=(me&&me.orders)||[];
+  $('ordersSummary').textContent=`عدد الطلبات: ${orders.length} — النقاط الحالية: ⭐ ${Number(me?.points||0).toLocaleString()}`;
+  if(!orders.length){
+    list.innerHTML='<div class="empty">ما عندك طلبات حالياً.</div>';
+    return;
+  }
+  list.innerHTML=orders.map((o,i)=>{
+    const items=parseOrderItems(o);
+    const itemsText=items.map(x=>`${esc(x.name||'منتج')} × ${Number(x.qty||1)}`).join('، ');
+    return `<div class="orderCard">
+      <div class="orderHead">
+        <b>طلب #${o.id}</b>
+        <span class="badge ${statusClass(o.status)}">${statusLabel(o.status)}</span>
+      </div>
+      <div class="muted">${esc(o.created_at||'')}</div>
+      <div style="margin-top:8px">${itemsText||'تفاصيل المنتجات غير متوفرة'}</div>
+      <div class="total"><span>الإجمالي</span><span>⭐ ${Number(o.total_points||0).toLocaleString()}</span></div>
+      ${o.status!=='cancelled'&&o.status!=='completed'
+        ? `<button class="btn secondary" onclick="cancelDemoOrder(${i})">إلغاء الطلب</button>`
+        : ''}
+    </div>`;
+  }).join('');
+}
+async function openOrders(){
+  if(!offlineDemo){try{me.orders=await api('/api/orders');}catch(e){me.orders=[]}}
+  renderOrders();$('ordersModal').style.display='flex';
+}
+async function cancelDemoOrder(index){
+  const orders=me.orders||[],o=orders[index];if(!o||o.status==='cancelled'||o.status==='completed')return;
+  if(!confirm('متأكد تريد إلغاء هذا الطلب؟ سيتم إرجاع النقاط والمخزون.'))return;
+  if(!offlineDemo){try{await api('/api/orders/'+o.id+'/cancel',{method:'POST'});await loadMe();me.orders=await api('/api/orders');await loadProducts();renderOrders();updateHeader();return;}catch(e){return alert(e.message)}}
+  const items=parseOrderItems(o);me.points+=Number(o.total_points||0);o.status='cancelled';products=products.map(p=>{const x=items.find(i=>String(i.productId)===String(p.id)||String(i.name)===String(p.name));return x?{...p,stock:Number(p.stock)+Number(x.qty||0)}:p});localStorage.setItem('demoCustomerV26',JSON.stringify(me));localStorage.setItem('demoProductsV26',JSON.stringify(products));updateHeader();renderProducts();renderOrders();
+}
+
+function pointsHistoryData(){
+  const h=(me&&me.pointsHistory)||[];
+  return Array.isArray(h)?h:[];
+}
+function renderPoints(){
+  const history=pointsHistoryData();
+  const earned=history.filter(x=>Number(x.amount)>0).reduce((n,x)=>n+Number(x.amount),0);
+  const spent=Math.abs(history.filter(x=>Number(x.amount)<0).reduce((n,x)=>n+Number(x.amount),0));
+  $('pointsOverview').innerHTML=
+    `<div class="pointsGrid">
+      <div class="pointCard">⭐ الرصيد الحالي<b>${Number(me?.points||0).toLocaleString()}</b></div>
+      <div class="pointCard">🏆 المستوى<b>${getLevelInfo(me?.points).current.badge} ${esc(getLevelInfo(me?.points).current.name)}</b></div>
+      <div class="pointCard">➕ المكتسب<b>${earned.toLocaleString()}</b></div>
+      <div class="pointCard">➖ المصروف<b>${spent.toLocaleString()}</b></div>
+    </div>
+    <div class="notice">🆔 رمز الزبون: <b>${esc(me?.customerCode||'DEMO-1001')}</b></div>`;
+  if(!history.length){
+    $('pointsHistory').innerHTML='<div class="empty">لا يوجد سجل نقاط حالياً.</div>';
+    return;
+  }
+  $('pointsHistory').innerHTML=history.slice().reverse().map(x=>{
+    const amount=Number(x.amount||0);
+    return `<div class="historyRow">
+      <div><b>${esc(x.reason||'حركة نقاط')}</b><div class="muted">${esc(x.created_at||'')}</div></div>
+      <b class="${amount>=0?'plus':'minus'}">${amount>=0?'+':''}${amount.toLocaleString()} ⭐</b>
+    </div>`;
+  }).join('');
+}
+function openPoints(){
+  if(!me)return openLogin();
+  renderPoints();
+  $('pointsModal').style.display='flex';
+}
+function ensurePointsHistory(){
+  if(!me.pointsHistory)me.pointsHistory=[];
+}
+
+function demoNotifications(){
+  const raw=localStorage.getItem('demoNotificationsV26');
+  if(raw){try{return JSON.parse(raw)||[]}catch(e){}}
+  const initial=[
+    {id:1,title:'أهلاً بك في المتجر 👋',body:'رصيدك التجريبي جاهز وتكدر تبدأ التسوق الآن.',read:false,created_at:new Date().toLocaleString('ar-IQ')},
+    {id:2,title:'⭐ رصيدك من النقاط',body:'عندك نقاط متاحة للشراء من المتجر.',read:false,created_at:new Date().toLocaleString('ar-IQ')}
+  ];
+  localStorage.setItem('demoNotificationsV26',JSON.stringify(initial));
+  return initial;
+}
+function saveDemoNotifications(list){
+  localStorage.setItem('demoNotificationsV26',JSON.stringify(list));
+}
+function renderNotifications(){
+  if(!offlineDemo)return;
+  const list=demoNotifications();
+  const unread=list.filter(x=>!x.read).length;
+  const countEl=$('notifyCount');
+  if(countEl) countEl.textContent=unread?String(unread):'';
+  const listEl=$('notificationsList');
+  if(!listEl)return;
+  if(!list.length){
+    listEl.innerHTML='<div class="empty">ماكو تنبيهات حالياً.</div>';
+    return;
+  }
+  listEl.innerHTML=list.map(x=>`
+    <div class="notificationItem ${x.read?'':'unread'}" onclick="readNotification(${x.id})">
+      <b>${esc(x.title)}</b>
+      <div>${esc(x.body)}</div>
+      <div class="notificationTime">${esc(x.created_at||'')}</div>
+    </div>`).join('');
+}
+function openNotifications(){
+  renderNotifications();
+  $('notificationsModal').style.display='flex';
+}
+function readNotification(id){
+  const list=demoNotifications().map(x=>x.id===id?{...x,read:true}:x);
+  saveDemoNotifications(list);
+  renderNotifications();
+  renderNotificationCount();
+}
+function markAllNotificationsRead(){
+  saveDemoNotifications(demoNotifications().map(x=>({...x,read:true})));
+  renderNotifications();
+  renderNotificationCount();
+}
+function clearNotifications(){
+  saveDemoNotifications([]);
+  renderNotifications();
+  renderNotificationCount();
+}
+function addDemoNotification(title,body){
+  const list=demoNotifications();
+  list.unshift({id:Date.now(),title,body,read:false,created_at:new Date().toLocaleString('ar-IQ')});
+  saveDemoNotifications(list.slice(0,30));
+  renderNotifications();
+}
+function notifyOrderCreated(order){
+  addDemoNotification('📦 تم إنشاء طلبك',`تم استلام طلبك #${order.id} بقيمة ⭐ ${Number(order.total_points||0).toLocaleString()} نقطة.`);
+}
+function notifyOrderCancelled(order){
+  addDemoNotification('↩️ تم إلغاء الطلب',`تم إلغاء طلبك #${order.id} وتم إرجاع ⭐ ${Number(order.total_points||0).toLocaleString()} نقطة.`);
+}
+
+function demoCoupons(){
+  const raw=localStorage.getItem('demoCouponsV26');
+  if(raw){try{return JSON.parse(raw)||[]}catch(e){}}
+  const list=[
+    {code:'WELCOME10',type:'percent',value:10,min:0,active:true,title:'خصم ترحيبي 10%'},
+    {code:'POINTS500',type:'points',value:500,min:3000,active:true,title:'خصم 500 نقطة'},
+    {code:'VIP20',type:'percent',value:20,min:10000,active:true,title:'خصم 20% للطلبات الكبيرة'}
+  ];
+  localStorage.setItem('demoCouponsV26',JSON.stringify(list));
+  return list;
+}
+function getAppliedCoupon(){
+  try{return JSON.parse(localStorage.getItem('demoAppliedCouponV26')||'null')}catch(e){return null}
+}
+function saveAppliedCoupon(c){
+  if(c)localStorage.setItem('demoAppliedCouponV26',JSON.stringify(c));
+  else localStorage.removeItem('demoAppliedCouponV26');
+}
+function couponDiscount(total,c){
+  if(!c)return 0;
+  if(c.type==='percent')return Math.min(total,Math.floor(total*(Number(c.value)/100)));
+  return Math.min(total,Number(c.value));
+}
+function renderCoupons(){
+  const list=demoCoupons();
+  const applied=getAppliedCoupon();
+  $('availableCoupons').innerHTML=
+    (applied?`<div class="couponApplied">✅ الكوبون المطبق: <b>${esc(applied.code)}</b> — سيتم حساب الخصم عند الدفع.<br>
+      <button class="btn secondary" style="margin-top:8px" onclick="removeCoupon()">إزالة الكوبون</button></div>`:'')+
+    list.filter(c=>c.active).map(c=>`
+      <div class="couponCard">
+        <span class="couponTag">${c.type==='percent'?'خصم '+c.value+'%':'خصم '+Number(c.value).toLocaleString()+' نقطة'}</span>
+        <div class="couponCode" style="margin-top:7px">${esc(c.code)}</div>
+        <div class="muted">${esc(c.title)}${Number(c.min)>0?' — الحد الأدنى: '+Number(c.min).toLocaleString()+' نقطة':''}</div>
+        <button class="btn secondary" style="margin-top:8px" onclick="useCoupon('${esc(c.code)}')">استخدام</button>
+      </div>`).join('');
+}
+function openCoupons(){
+  renderCoupons();
+  $('couponModal').style.display='flex';
+}
+function useCoupon(code){
+  $('couponInput').value=code;
+  applyCoupon();
+}
+function applyCoupon(){
+  const code=String($('couponInput').value||'').trim().toUpperCase();
+  const c=demoCoupons().find(x=>x.active&&x.code===code);
+  if(!c)return alert('❌ الكوبون غير صحيح أو غير متاح.');
+  const total=cart.reduce((n,x)=>n+Number(x.pricePoints)*Number(x.qty),0);
+  if(total<Number(c.min||0))return alert('⚠️ هذا الكوبون يحتاج طلباً بقيمة '+Number(c.min).toLocaleString()+' نقطة على الأقل.');
+  saveAppliedCoupon(c);
+  renderCoupons();
+  renderCart();
+  alert('✅ تم تطبيق الكوبون '+c.code);
+}
+function removeCoupon(){
+  saveAppliedCoupon(null);
+  renderCoupons();
+  renderCart();
+}
+
+function getAllLevels(){
+  return [
+    {name:'متدرّب',min:0,next:500,badge:'🌱',reward:0,color:'#64748b'},
+    {name:'برونزي',min:500,next:1000,badge:'🥉',reward:50,color:'#a66a3f'},
+    {name:'فضي',min:1000,next:1500,badge:'🥈',reward:100,color:'#718096'},
+    {name:'ذهبي',min:1500,next:2000,badge:'🥇',reward:150,color:'#c99700'},
+    {name:'بلاتيني',min:2000,next:2500,badge:'💎',reward:200,color:'#2c9db8'},
+    {name:'ياقوتي',min:2500,next:3000,badge:'🔴',reward:250,color:'#b82f45'},
+    {name:'ماسي',min:3000,next:3500,badge:'💠',reward:300,color:'#3867d6'},
+    {name:'أسطوري',min:3500,next:4000,badge:'👑',reward:350,color:'#8b5cf6'},
+    {name:'نخبة',min:4000,next:null,badge:'🏆',reward:400,color:'#d97706'}
+  ];
+}
+function getLevelInfo(points){
+  const p=Math.max(0,Number(points||0));
+  const levels=getAllLevels();
+  let current=levels[0];
+  for(const l of levels) if(p>=l.min) current=l;
+  const progress=current.next?Math.min(100,((p-current.min)/(current.next-current.min))*100):100;
+  return {current,progress,points:p,levels};
+}
+function demoAvatar(){
+  return me?.avatar||'data:image/svg+xml;charset=UTF-8,'+encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160"><rect width="100%" height="100%" rx="80" fill="#eaf4ff"/><text x="50%" y="58%" text-anchor="middle" font-size="70">👤</text></svg>`);
+}
+function openProfile(){
+  if(!me)return openLogin();
+  const info=getLevelInfo(me.points);
+  const levels=getAllLevels();
+  const next=info.current.next;
+  const remaining=next?Math.max(0,next-info.points):0;
+  const avatar=demoAvatar();
+
+  $('profileCard').innerHTML=`
+    <div class="proProfileHero">
+      <div class="proAvatarWrap">
+        <img class="proAvatar" src="${avatar}" alt="الصورة الشخصية">
+        <label class="avatarCamera" for="profileAvatar" title="تغيير الصورة">📷</label>
+        <div class="proAvatarLevel">${info.current.badge}</div>
+      </div>
+      <div class="proIdentity">
+        <div class="proEyebrow">حساب الزبون</div>
+        <h2>${esc(me.username||'زبون تجريبي')}</h2>
+        <div class="proCode">🆔 ${esc(me.customerCode||'DEMO-1001')}</div>
+        <div class="proLevelPill">${info.current.badge} ${info.current.name}</div>
+      </div>
+      <div class="proPointsBox">
+        <span>رصيد النقاط</span>
+        <strong>${info.points.toLocaleString()}</strong>
+        <small>⭐ نقطة</small>
+      </div>
+    </div>
+
+    <div class="proStatsGrid">
+      <div class="proStat"><span>🏆 المستوى</span><b>${info.current.name}</b></div>
+      <div class="proStat"><span>⭐ النقاط</span><b>${info.points.toLocaleString()}</b></div>
+      <div class="proStat"><span>📦 الطلبات</span><b>${(me.orders||[]).length}</b></div>
+      <div class="proStat"><span>🎟️ الكوبونات</span><b>متاحة</b></div>
+    </div>
+
+    <div class="proProgressCard">
+      <div class="proProgressTop">
+        <div><b>${info.current.badge} ${info.current.name}</b><small>${next?`الهدف القادم: ${next.toLocaleString()} نقطة`:'🏆 أعلى مستوى'}</small></div>
+        <strong>${Math.round(info.progress)}%</strong>
+      </div>
+      <div class="proProgressBar"><div style="width:${info.progress}%"></div></div>
+      <div class="proProgressBottom">
+        <span>${info.points.toLocaleString()} نقطة</span>
+        <span>${next?`متبقي ${remaining.toLocaleString()} نقطة`:'أنت بالقمّة 👑'}</span>
+      </div>
+    </div>
+
+    <div class="proSectionTitle">🏆 مستوياتك وهداياك</div>
+    <div class="levelsGrid">
+      ${levels.map((l)=>{
+        const unlocked=info.points>=l.min;
+        const isCurrent=l.name===info.current.name;
+        return `<div class="levelCard ${unlocked?'unlocked':'locked'} ${isCurrent?'current':''}" style="--level-color:${l.color}">
+          <div class="levelBadgeBig">${unlocked?l.badge:'🔒'}</div>
+          <div class="levelCardName">${l.name}</div>
+          <div class="levelCardPoints">${l.min.toLocaleString()} نقطة</div>
+          <div class="levelCardState">🎁 +${l.reward.toLocaleString()} نقطة${isCurrent?' • أنت هنا ✓':unlocked?' • تم فتحها ✓':' • مقفلة'}</div>
+        </div>`;
+      }).join('')}
+    </div>
+
+    <div class="proTip">
+      💡 <b>شلون تصعد المستوى؟</b>
+      كلما تجمع نقاط أكثر، تنتقل تلقائياً للمستوى التالي وتفتح الشارة والهديّة الخاصة بالمستوى.
+    </div>`;
+
+  $('profilePassword').value='';
+  $('profileAvatar').value='';
+  $('profileModal').style.display='flex';
+}
+async function saveProfile(){
+  if(!me)return;
+  const file=document.getElementById('profileAvatar').files?.[0];
+  const send=async(avatar)=>{try{const d=await api('/api/me/profile',{method:'PATCH',body:JSON.stringify({avatar})});me=d;updateHeader();openProfile();alert('✅ تم حفظ صورة الحساب.');}catch(e){alert(e.message||'تعذر حفظ الصورة.')}};
+  if(!file)return alert('اختار صورة أولاً.');
+  if(file.size>2*1024*1024)return alert('❌ الصورة أكبر من 2MB.');
+  if(!file.type.startsWith('image/'))return alert('❌ اختر صورة فقط.');
+  const reader=new FileReader();reader.onload=()=>send(reader.result);reader.readAsDataURL(file);
+}
+function removeProfileAvatar(){
+  if(!me)return;
+  me.avatar='';
+  localStorage.setItem('demoCustomerV26',JSON.stringify(me));
+  openProfile();
+}
+function removeProfileAvatar(){
+  if(!me)return;
+  me.avatar='';
+  localStorage.setItem('demoCustomerV26',JSON.stringify(me));
+  openProfile();
+}
+async function openAccount(){
+  if(!me)return openLogin();
+  renderAccount();
+  $('accountModal').style.display='flex';
+}
+
+function JSONSafe(v){try{return JSON.parse(v)}catch{return[]}}
+function statusText(s){return({new:'جديد',processing:'قيد المعالجة',completed:'مكتمل',cancelled:'ملغي'})[s]||s}
+async function init(){const saved=JSON.parse(localStorage.getItem('demoCustomerV26')||'null');if(saved){me=saved;offlineDemo=true;updateHeader()}else{await loadMe();if(!me){await demoLogin(true)}}await loadProducts(); if(offlineDemo){ if(Number(me.points)<20000 && !(me.orders&&me.orders.length)) {me.points=20000; localStorage.setItem('demoCustomerV26',JSON.stringify(me)); updateHeader();} if(!localStorage.getItem('demoProductsV26')) localStorage.setItem('demoProductsV26',JSON.stringify(demoProducts)); } renderCategories(); renderSlider(); $('cartCount').textContent='0'}init();
+
+</script>
+
+<style>
+.clearFiltersBtn{height:42px;border:1px solid #0b4fa3;border-radius:12px;padding:0 15px;background:#0b4fa3;color:#fff;font-weight:700;cursor:pointer;transition:.2s}
+.clearFiltersBtn:hover{transform:translateY(-1px);filter:brightness(1.06)}
+@media(max-width:650px){.clearFiltersBtn{width:100%}}
+</style>
+<script>
+function clearStoreFilters(){
+  const q=document.getElementById('search'), c=document.getElementById('category'), s=document.getElementById('sort');
+  if(q) q.value='';
+  if(c) c.value='';
+  if(s) s.value='default';
+  if(typeof renderProducts==='function') renderProducts();
+}
+</script>
+<script id="v274-cart-extra-js">
+(function(){
+  const oldCheckout=window.checkout;
+  if(typeof oldCheckout==='function'){
+    window.checkout=function(){
+      if(!cart || !cart.length) return oldCheckout();
+      const total=cart.reduce((n,x)=>n+Number(x.pricePoints)*Number(x.qty),0);
+      const applied=typeof getAppliedCoupon==='function'?getAppliedCoupon():null;
+      const discount=typeof couponDiscount==='function'?couponDiscount(total,applied):0;
+      const finalTotal=Math.max(0,total-discount);
+      if(Number(me?.points||0)<finalTotal){ renderCart(); return; }
+      oldCheckout();
+      setTimeout(function(){
+        const s=document.getElementById('checkoutSummary');
+        if(s) s.classList.add('v274-check-card');
+      },0);
+    };
+  }
+})();
+</script>
+
+
+<script id="v275-polish-js">
+(function(){
+  // Add a subtle entrance class to product cards whenever they are rendered.
+  const observer=new MutationObserver(function(muts){
+    muts.forEach(m=>{
+      if(!m.addedNodes)return;
+      m.addedNodes.forEach(n=>{
+        if(n.nodeType!==1)return;
+        if(n.matches?.('.card')) n.classList.add('v275-fade');
+        n.querySelectorAll?.('.card').forEach(c=>c.classList.add('v275-fade'));
+      });
+    });
+  });
+  const products=document.getElementById('products');
+  if(products) observer.observe(products,{childList:true});
+})();
+</script>
+
+
+<script id="v279-mobile-back-js">
+(function(){
+  function addMobileBackButtons(){
+    document.querySelectorAll('.modal .box').forEach(function(box){
+      if(box.querySelector(':scope > .v279-mobile-back')) return;
+      const btn=document.createElement('button');
+      btn.type='button';
+      btn.className='v279-mobile-back';
+      btn.innerHTML='← رجوع';
+      btn.onclick=function(){
+        if(typeof closeModals==='function') closeModals();
+        else if(typeof history!=='undefined' && history.length>1) history.back();
+      };
+      const heading=box.querySelector(':scope > h1, :scope > h2, :scope > h3');
+      if(heading) heading.insertAdjacentElement('afterend',btn);
+      else box.insertBefore(btn,box.firstChild);
+    });
+  }
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded',addMobileBackButtons);
+  }else{
+    addMobileBackButtons();
+  }
+})();
+</script>
+
+</body></html>
