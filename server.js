@@ -118,7 +118,7 @@ app.get('/api/admin/stats',requireAdmin,(req,res)=>{res.json({customers:db.prepa
 
 app.get('/api/health',(req,res)=>res.json({ok:true,service:'points-store-v28',database:'sqlite'}));
 app.use(express.static(path.join(__dirname,'public')));
-app.get('/{*splat}',(req,res)=>res.sendFile(path.join(__dirname,'public','index.html')));
+app.get('*',(req,res)=>res.sendFile(path.join(__dirname,'public','index.html')));
 const HOST=process.env.HOST||'0.0.0.0';
-const server=app.listen(PORT,HOST,()=>console.log(`Points Store V28 running on http://${HOST}:${PORT}`));
+const server=app.listen(Number(PORT),HOST,()=>console.log(`Points Store V28 LIVE on ${HOST}:${PORT}`));
 server.on('error',(err)=>{console.error('SERVER_START_ERROR',err);process.exit(1);});
