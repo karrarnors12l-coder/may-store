@@ -118,5 +118,5 @@ app.get('/api/admin/stats',requireAdmin,(req,res)=>{res.json({customers:db.prepa
 
 app.get('/api/health',(req,res)=>res.json({ok:true,service:'points-store-v28',database:'sqlite'}));
 app.use(express.static(path.join(__dirname,'public')));
-app.get('*',(req,res)=>res.sendFile(path.join(__dirname,'public','index.html')));
+app.get('/{*splat}',(req,res)=>res.sendFile(path.join(__dirname,'public','index.html')));
 app.listen(PORT,()=>console.log(`Points Store V28 running on http://localhost:${PORT}`));
